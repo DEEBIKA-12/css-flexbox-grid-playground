@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: css-playground
-          image: css-flexbox-grid-playground:latest
+          image: deebikanp/css-flexbox-grid-playground:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
