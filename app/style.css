@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background: #f3f5f9;
+  color: #1f2937;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: #64748b;
+}
+
+.playground {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.controls,
+.preview-section,
+.code-section {
+  padding: 20px;
+  background: white;
+  border: 1px solid #dbe1ea;
+  border-radius: 12px;
+}
+
+.controls h2,
+.preview-section h2 {
+  margin-top: 0;
+}
+
+.controls label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.controls select {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+}
+
+.controls button,
+.code-heading button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.controls button {
+  margin-top: 18px;
+}
+
+.controls button:hover,
+.code-heading button:hover {
+  background: #1d4ed8;
+}
+
+.preview {
+  display: flex;
+  gap: 12px;
+  min-height: 220px;
+  padding: 16px;
+  border: 2px dashed #9ca3af;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.tile {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+}
+
+.code-section {
+  grid-column: 1 / -1;
+}
+
+.code-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.code-heading h2 {
+  margin: 0;
+}
+
+.code-section pre {
+  overflow-x: auto;
+  padding: 16px;
+  border-radius: 8px;
+  background: #111827;
+  color: #e5e7eb;
+  line-height: 1.5;
+}
+
+#copyMessage {
+  min-height: 20px;
+  color: #15803d;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 14px;
+  }
+
+  .playground {
+    grid-template-columns: 1fr;
+  }
+
+  .code-section {
+    grid-column: auto;
+  }
+
+  .preview {
+    min-height: 180px;
+  }
+}

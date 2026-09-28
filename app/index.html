@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flexbox / Grid Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>CSS Flexbox / Grid Playground</h1>
+    <p>Experiment with layout settings and preview the result.</p>
+  </header>
+
+  <main class="playground">
+    <section class="controls">
+      <h2>Layout Controls</h2>
+
+      <label for="layoutMode">Layout Mode</label>
+      <select id="layoutMode">
+        <option value="flex">Flexbox</option>
+        <option value="grid">CSS Grid</option>
+      </select>
+
+      <div id="flexControls">
+        <label for="direction">Flex Direction</label>
+        <select id="direction">
+          <option value="row">Row</option>
+          <option value="column">Column</option>
+          <option value="row-reverse">Row Reverse</option>
+          <option value="column-reverse">Column Reverse</option>
+        </select>
+
+        <label for="justify">Justify Content</label>
+        <select id="justify">
+          <option value="flex-start">Start</option>
+          <option value="center">Center</option>
+          <option value="flex-end">End</option>
+          <option value="space-between">Space Between</option>
+          <option value="space-around">Space Around</option>
+          <option value="space-evenly">Space Evenly</option>
+        </select>
+
+        <label for="align">Align Items</label>
+        <select id="align">
+          <option value="stretch">Stretch</option>
+          <option value="flex-start">Start</option>
+          <option value="center">Center</option>
+          <option value="flex-end">End</option>
+        </select>
+
+        <label for="wrap">Flex Wrap</label>
+        <select id="wrap">
+          <option value="nowrap">No Wrap</option>
+          <option value="wrap">Wrap</option>
+        </select>
+      </div>
+
+      <div id="gridControls" hidden>
+        <label for="columns">Grid Columns</label>
+        <select id="columns">
+          <option value="2">2 columns</option>
+          <option value="3" selected>3 columns</option>
+          <option value="4">4 columns</option>
+        </select>
+
+        <label for="gridGap">Grid Gap</label>
+        <select id="gridGap">
+          <option value="8">8 px</option>
+          <option value="12" selected>12 px</option>
+          <option value="20">20 px</option>
+          <option value="28">28 px</option>
+        </select>
+      </div>
+
+      <label for="itemCount">Number of Tiles</label>
+      <select id="itemCount">
+        <option value="2">2</option>
+        <option value="4" selected>4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+      </select>
+
+      <button id="resetButton" type="button">Reset Layout</button>
+    </section>
+
+    <section class="preview-section">
+      <h2>Live Preview</h2>
+      <div class="preview" id="preview">
+        <div class="tile">1</div>
+        <div class="tile">2</div>
+        <div class="tile">3</div>
+        <div class="tile">4</div>
+      </div>
+    </section>
+
+    <section class="code-section">
+      <div class="code-heading">
+        <h2>Generated CSS</h2>
+        <button id="copyButton" type="button">Copy CSS</button>
+      </div>
+
+      <pre><code id="cssOutput"></code></pre>
+      <p id="copyMessage" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
