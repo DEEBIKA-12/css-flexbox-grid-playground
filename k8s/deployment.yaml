@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: css-playground
+  namespace: css-playground
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: css-playground
+  template:
+    metadata:
+      labels:
+        app: css-playground
+    spec:
+      containers:
+        - name: css-playground
+          image: css-flexbox-grid-playground:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80

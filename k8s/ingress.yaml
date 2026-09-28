@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: css-playground-ingress
+  namespace: css-playground
+spec:
+  rules:
+    - host: css-playground.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: css-playground-service
+                port:
+                  number: 80
