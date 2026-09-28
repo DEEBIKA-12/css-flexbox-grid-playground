@@ -1,0 +1,9 @@
+.git
+.gitignore
+README.md
+terraform/
+ansible/
+k8s/
+tests/
+.github/
+Jenkinsfile
