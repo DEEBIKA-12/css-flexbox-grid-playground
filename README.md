@@ -1,17 +1,8 @@
-# CSS Flexbox / Grid Playground
+## Automated Test
 
-A beginner-friendly web tool for experimenting with CSS Flexbox and CSS Grid layouts.
+A Node.js test checks that the app's HTML, CSS, and JavaScript files exist and that the HTML contains an `<html>` element.
 
-## Features
-
-- Switch between Flexbox and Grid
-- Adjust layout settings and preview changes live
-- Change the number of tiles
-- View and copy the generated CSS
-
-## Run with Docker
-
-Build the image from the project root:
+Run the test locally:
 
 ```bash
-docker build -f docker/Dockerfile -t css-flexbox-grid-playground .
+node tests/test-app.js
