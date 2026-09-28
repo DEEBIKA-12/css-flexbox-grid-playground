@@ -1,4 +1,4 @@
-name: CI - Build Docker Image
+name: CI - Test App and Build Docker Image
 
 on:
   push:
@@ -7,12 +7,20 @@ on:
     branches: [main, master]
 
 jobs:
-  build:
+  test-and-build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Run app structure test
+        run: node tests/test-app.js
 
       - name: Build Docker image
         run: docker build -f docker/Dockerfile -t css-flexbox-grid-playground .
