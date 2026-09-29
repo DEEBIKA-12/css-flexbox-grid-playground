@@ -38,10 +38,6 @@ pipeline {
         }
 
         stage('Push Docker image') {
-            when {
-                branch 'master'
-            }
-
             steps {
                 withCredentials([
                     usernamePassword(
@@ -60,10 +56,6 @@ pipeline {
         }
 
         stage('Deploy to Kubernetes') {
-            when {
-                branch 'master'
-            }
-
             steps {
                 bat '''
                     kubectl set image deployment/css-playground ^
